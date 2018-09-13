@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * 配置文件
+ *
  * @author Administrator
  */
 @Configuration
@@ -30,7 +31,9 @@ public class ConfigBean {
     @Bean
     public IRule myRule() {
 
-        return new RandomRule();
+//        return new RandomRule();
+
+        return new RoundRobinRule();
     }
 
 }

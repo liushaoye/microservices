@@ -1,7 +1,10 @@
 package com.baidu.www.springcloud.controller;
 
+import com.baidu.www.myrule.MySelfRule;
 import com.baidu.www.springcloud.entity.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +16,11 @@ import java.util.List;
  * 保证80端口未被占用,先启动8001,再启动本服务
  */
 @RestController
+@EnableEurekaClient
+@RibbonClient(name = "MICROSERVICECLOUD-DEPT", configuration = MySelfRule.class)
 public class DeptController_Consumer {
 
-//    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    //    private static final String REST_URL_PREFIX = "http://localhost:8001";
     private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 
     /**
