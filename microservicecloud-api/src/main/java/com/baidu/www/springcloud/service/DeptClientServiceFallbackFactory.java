@@ -8,7 +8,12 @@ import org.springframework.stereotype.Component;
 
 import feign.hystrix.FallbackFactory;
 
-@Component // 不要忘记添加，不要忘记添加
+/**
+ * @author Administrator
+ * <p>
+ * 不要忘记添加，不要忘记添加
+ */
+@Component
 public class DeptClientServiceFallbackFactory implements FallbackFactory<DeptClientService> {
     @Override
     public DeptClientService create(Throwable throwable) {
