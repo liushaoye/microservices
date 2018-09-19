@@ -2,6 +2,7 @@
   <dictionary name="Administrator">
     <words>
       <w>microservices</w>
+      <w>zuul</w>
     </words>
   </dictionary>
 </component>
