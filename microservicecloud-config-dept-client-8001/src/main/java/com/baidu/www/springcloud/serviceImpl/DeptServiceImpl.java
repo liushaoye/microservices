@@ -27,12 +27,8 @@ import java.util.List;
 @Service
 public class DeptServiceImpl implements DeptService {
 
-    private final DeptDao deptDao;
-
     @Autowired
-    public DeptServiceImpl(DeptDao deptDao) {
-        this.deptDao = deptDao;
-    }
+    private DeptDao deptDao;
 
     @Override
     public boolean add(Dept dept) {
